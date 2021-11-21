@@ -1,17 +1,16 @@
-package br.com.EstruturaDeDados.ClasseVetor;
+package br.com.EstruturaDeDados.VetoresEArrays;
 
-
-public class VetorObjetos {
+public class Lista<T> {
 
     private Object[] elementos;
     private int tamanho;
 
-    public VetorObjetos(int capacidade) {
-        elementos = new Object[capacidade];
+    public Lista(int capacidade) {
+        elementos = (T[]) new Object[capacidade];
         tamanho = 0;
     }
 
-    public boolean adiciona(Object elemento) {
+    public boolean adiciona(T elemento) {
         aumentaCapacidade();
         if (this.tamanho < this.elementos.length) {
             this.elementos[this.tamanho] = elemento;
@@ -21,7 +20,7 @@ public class VetorObjetos {
         return false;
     }
 
-    public void adiciona(int posicao, Object elemento) {
+    public void adiciona(int posicao, T elemento) {
         if (!(posicao >= 0 && posicao < tamanho)) {
             throw new IllegalArgumentException("Posição inválida");
         }
@@ -36,9 +35,9 @@ public class VetorObjetos {
 
     private void aumentaCapacidade() {
         if (this.tamanho == elementos.length) {
-            Object[] elementosNovos = new Object[this.elementos.length * 2];
+            T[] elementosNovos = (T[]) new Object[this.elementos.length * 2];
             for (int i = 0; i < elementos.length; i++) {
-                elementosNovos[i] = elementos[i];
+                elementosNovos[i] = (T) elementos[i];
             }
             this.elementos = elementosNovos;
         }
@@ -58,16 +57,16 @@ public class VetorObjetos {
         if (!(posicao >= 0 && posicao < tamanho)) {
             throw new IllegalArgumentException("Posição inválida");
         }
-            return this.elementos[posicao];
+        return this.elementos[posicao];
     }
 
-    public int busca(Object elemento) {
+    public int busca(T elemento) {
         for (int i = 0; i < this.tamanho; i++) {
             if (this.elementos[i].equals(elemento)) {
                 return i;
             }
         }
-            return -1;
+        return -1;
     }
 
     public int tamanho() {
@@ -90,20 +89,9 @@ public class VetorObjetos {
     }
 
     public static void main(String[] args) {
-        VetorObjetos vetor = new VetorObjetos(2);
 
-        vetor.adiciona(1);
-        vetor.adiciona(2);
-        vetor.adiciona(3);
-        vetor.adiciona(4);
-        vetor.adiciona("askldk");
-
-        System.out.println(vetor);
-        vetor.remove(1);
-        System.out.println(vetor);
-
-
+        Lista<String> vetor = new Lista<>(3);
+        vetor.adiciona("Elemento");
 
     }
-
 }

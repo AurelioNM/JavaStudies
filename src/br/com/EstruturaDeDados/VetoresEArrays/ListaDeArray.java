@@ -1,4 +1,4 @@
-package br.com.EstruturaDeDados.ClasseVetor;
+package br.com.EstruturaDeDados.VetoresEArrays;
 
 import java.util.ArrayList;
 
