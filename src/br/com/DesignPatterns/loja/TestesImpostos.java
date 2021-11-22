@@ -1,10 +1,6 @@
 package br.com.DesignPatterns.loja;
 
 import br.com.DesignPatterns.loja.desconto.CalculadoraDeDescontos;
-import br.com.DesignPatterns.loja.imposto.CalculadoraDeImpostos;
-import br.com.DesignPatterns.loja.imposto.ICMS;
-import br.com.DesignPatterns.loja.imposto.ISS;
-import br.com.DesignPatterns.loja.imposto.Imposto;
 import br.com.DesignPatterns.loja.orcamento.Orcamento;
 
 import java.math.BigDecimal;
