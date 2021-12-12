@@ -2,7 +2,8 @@ package br.com.JavaFunctional.imperative;
 
 import java.util.List;
 
-import static imperative.Main.Gender.*;
+import static br.com.JavaFunctional.imperative.Main.Gender.*;
+
 
 public class Main {
     public static void main(String[] args) {
